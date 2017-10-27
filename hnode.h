@@ -5,11 +5,12 @@ enum OPType {
   DEL
 };
 
+
 class HNode {
         
     public:
         static HNode head;
-        // FSet buckets[];
+        FSet buckets[];
         int size;
         HNode *pred;
         HNode(int size);
