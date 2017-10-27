@@ -9,7 +9,29 @@
 
 #include "hashtable.h"
 
-
-HashTable::HashTable(){
+template<typename T>
+HashTable<T>::HashTable(){
 
 }
+
+template<typename T>
+bool HashTable<T>::insert(T &val){
+    return true;
+}
+
+template<typename T>
+bool HashTable<T>::remove(T &val){
+    return true;
+}
+
+template<typename T>
+void HashTable<T>::freeze(){
+
+}
+
+template<typename T>
+void HashTable<T>::invoke(){
+
+}
+
+template class HashTable<int>;
