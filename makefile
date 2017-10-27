@@ -1,2 +1,2 @@
 hash:
-	g++ hashtable.cc -o hashtable
+	g++ hnode.cc -o hnode
