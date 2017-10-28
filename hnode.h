@@ -6,32 +6,49 @@ enum OPType {
   DEL
 };
 
-template<typename T>
-struct FSetNode{
-    bool is_mutable;
-    std::unordered_set<T> hash_set;
+//FSetOps
+class FSetOp {
+    public:
+        OPType type;
+        int key;
+        bool done;
+        bool response;
+        FSetOp(OPType op, int key);
+        bool getResponse();
 };
 
+//FSetNode
+template<typename T>
+class FSetNode{
+    public:
+        bool is_mutable;
+        std::unordered_set<T> hash_set;
+        FSetNode();
+        bool hasMember(T &key);
+};
+
+
+// FSet 
 template<typename T>
 class FSet{
-    private:
-        struct FSetNode<T> * head;
     public:
+        FSetNode<T> * head;
         FSet();
         bool invoke(OPType &op);
         T* freeze();
         bool hasMember(T &key);
-        bool getResponse(OPType &op);
+        bool getResponse(FSetOp &op);
 };
 
+
+// HNode
 template<typename T>
 class HNode {
-    private:
-        static HNode head;
+    public:
+        static HNode head;  //don't think we actually need this  
         FSet<T> *buckets;
         int size;
         HNode *pred;
-    public:
         HNode(int size);
         bool insert(T &key);
         bool remove(T &key);
@@ -39,7 +56,6 @@ class HNode {
         void resize(bool grow);
         bool apply(OPType type, T &key);
         void initBucket(HNode t, int hashIndex);
-        ~HNode();
 };
 
 int main(void){
