@@ -1,3 +1,13 @@
+/**
+ * @Author: Michel Andy, Levy Adam
+ * @Date:   2017-11-05T20:44:33-05:00
+ * @Email:  Andymic12@gmail.com
+ * @Project: Dynamic-Nonblocking-Hash-Table
+ * @Filename: hnode.cc
+ * @Last modified by:   Michel Andy
+ * @Last modified time: 2017-11-05T21:11:15-05:00
+ */
+
 #include <iostream>
 #include "hnode.h"
 
@@ -42,61 +52,3 @@ bool HNode<T>::apply(OPType type, T &key) {
 
 template<typename T>
 void HNode<T>::initBucket(HNode t, int hashIndex) {}
-
-
-
-
-// FSet 
-template<typename T>
-FSet<T>::FSet(){ 
-    this->head = new FSetNode<T>();
-}
-
-template<typename T>
-bool FSet<T>::invoke(OPType &op){
-    return true;
-}
-
-template<typename T>
-T* FSet<T>::freeze(){
-    return new T;
-}
-
-template<typename T>
-bool FSet<T>::hasMember(T &key){
-    return this->head->hasMember(key);
-}
-
-template<typename T>
-bool FSet<T>::getResponse(FSetOp &op){
-    return op.getResponse();
-}
-
-
-
-
-//FSetNode
-template<typename T>
-FSetNode<T>::FSetNode() {
-    this->is_mutable = true;
-    std::unordered_set<T> hash_set;
-}
-
-template<typename T>
-bool FSetNode<T>::hasMember(T &key) {
-    typename std::unordered_set<T>::const_iterator got = this->hash_set.find(key);
-    return got == this->hash_set.end();
-}
-
-
-//FSetOP
-FSetOp::FSetOp(OPType type, int key) {
-    this->type = type;
-    this->key = key;
-    this->done = false;
-    this->response = false;
-}
-
-bool FSetOp::getResponse() {
-    return this->response;
-}

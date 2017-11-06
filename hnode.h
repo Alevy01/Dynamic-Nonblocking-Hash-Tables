@@ -1,51 +1,20 @@
+/**
+ * @Author: Michel Andy, Levy Adam
+ * @Date:   2017-11-05T20:44:59-05:00
+ * @Email:  Andymic12@gmail.com
+ * @Project: Dynamic-Nonblocking-Hash-Table
+ * @Filename: hnode.h
+ * @Last modified by:   Michel Andy
+ * @Last modified time: 2017-11-05T21:02:22-05:00
+ */
+
 #include<iostream>
-#include<unordered_set>
+#include "fset.h"
 
-enum OPType {
-  INS,
-  DEL
-};
-
-//FSetOps
-class FSetOp {
-    public:
-        OPType type;
-        int key;
-        bool done;
-        bool response;
-        FSetOp(OPType op, int key);
-        bool getResponse();
-};
-
-//FSetNode
-template<typename T>
-class FSetNode{
-    public:
-        bool is_mutable;
-        std::unordered_set<T> hash_set;
-        FSetNode();
-        bool hasMember(T &key);
-};
-
-
-// FSet 
-template<typename T>
-class FSet{
-    public:
-        FSetNode<T> * head;
-        FSet();
-        bool invoke(OPType &op);
-        T* freeze();
-        bool hasMember(T &key);
-        bool getResponse(FSetOp &op);
-};
-
-
-// HNode
 template<typename T>
 class HNode {
     public:
-        static HNode head;  //don't think we actually need this  
+        static HNode head;  //don't think we actually need this
         FSet<T> *buckets;
         int size;
         HNode *pred;
