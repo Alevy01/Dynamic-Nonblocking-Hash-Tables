@@ -9,7 +9,7 @@
 
 
 CXX=g++
-CFLAGS=-g -std=c++11 -pthread -Wall
+CFLAGS=-g -std=c++14 -pthread -Wall
 INC=-I./
 SRCS=hnode.cc
 MAIN=hnode
