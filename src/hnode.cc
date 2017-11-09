@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "hnode.h"
+#include <atomic>
 
 template<typename T>
 HNode<T>::HNode(int size) {
@@ -41,7 +42,23 @@ bool HNode<T>::contains(T &key) {
 }
 
 template<typename T>
-void HNode<T>::resize(bool grow) {}
+void HNode<T>::resize(bool grow){
+    //calculate new size: grow or shrink
+    int new_size = grow ? this->size*2 : this->size/2;
+   
+    //creating new buckets of at least the size of the old bucket
+    std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
+    
+    if(new_buckets->size >= size && grow){
+        for(int i=0; i<new_buckets->size -1; i++){
+            //migrate each bucket from old to the new
+            //init_bucket(new_buckets, i);}
+        }
+        
+        //setting the old bucket to null
+        new_buckets.compare_exhange_weak(this->buckets, new_buckets);
+    }
+}
 
 template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
