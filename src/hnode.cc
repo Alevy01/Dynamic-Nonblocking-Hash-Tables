@@ -52,7 +52,7 @@ void HNode<T>::resize(bool grow){
     if(new_buckets->size >= size && grow){
         for(int i=0; i<new_buckets->size -1; i++){
             //migrate each bucket from old to the new
-            //init_bucket(new_buckets, i);}
+            initBucket(new_buckets, i);
         }
         
         //setting the old bucket to null
@@ -77,10 +77,11 @@ FSet<T> HNode<T>::initBucket(HNode t, int i) {
     int curr_size = t->size;
 
     if(curr_bucket == NULL && prev_hnode != NULL) {        
-        if(curr_size == (prev_size*2)) { // If we're growing
+        if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
-            new_set = new_bucket.freeze(); // freeze still needs to be implemented
-        } else { //If we're shrinking
+            new_set = new_bucket.freeze(); 
+
+        } else { 
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
             new_set = new_bucket.freeze();
