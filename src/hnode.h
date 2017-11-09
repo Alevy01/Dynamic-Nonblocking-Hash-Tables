@@ -24,9 +24,10 @@ class HNode {
         bool contains(T &key);
         void resize(bool grow);
         bool apply(OPType type, T &key);
-        void initBucket(HNode t, int hashIndex);
+        FSet<T> initBucket(HNode t, int hashIndex);
 };
 
 int main(void){
+    HNode<int> *hnode = new HNode<int>(5);
     return 0;
 }

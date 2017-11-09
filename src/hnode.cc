@@ -32,9 +32,9 @@ template<typename T>
 bool HNode<T>::contains(T &key) {
     FSet<T> curr_bucket = this->buckets[key % this->size];
     if(!curr_bucket.head->is_mutable) {
-        HNode *pred = this->pred;
-        if(pred != NULL) {
-            curr_bucket = pred->buckets[key % pred->size];
+        HNode *prev_hnode = this->pred;
+        if(prev_hnode != NULL) {
+            curr_bucket = prev_hnode->buckets[key % prev_hnode->size];
         }
     }
     return curr_bucket.hasMember(key);
@@ -51,4 +51,28 @@ bool HNode<T>::apply(OPType type, T &key) {
 }
 
 template<typename T>
-void HNode<T>::initBucket(HNode t, int hashIndex) {}
+FSet<T> HNode<T>::initBucket(HNode t, int i) {
+    FSet<T> curr_bucket = t->buckets[i];
+    HNode *prev_hnode = t.pred;
+    FSet<T> new_bucket;
+    FSet<T> new_set;
+    int prev_size = prev_hnode->size;
+    int curr_size = t->size;
+
+    if(curr_bucket == NULL && prev_hnode != NULL) {        
+        if(curr_size == (prev_size*2)) { // If we're growing
+            new_bucket = prev_hnode->buckets[i % prev_size];
+            new_set = new_bucket.freeze(); // freeze still needs to be implemented
+        } else { //If we're shrinking
+            new_bucket = prev_hnode->buckets[i];
+            FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
+            new_set = new_bucket.freeze();
+            FSet<T> tmp_set = larger_bucket.freeze();
+            new_set.insert(tmp_set.begin(), tmp_set.end());
+        }
+        FSet<T> *return_set = new FSet<T>(new_set);
+        std::atomic<FSet<T>> b = t.buckets[i];
+        b.compare_exchange_weak(NULL, return_set);
+    }
+    return t.buckets[i];
+}

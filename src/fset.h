@@ -21,6 +21,10 @@ class FSet{
             this->head = new FSetNode<T>();
         }
 
+        FSet(std::unordered_set<T> hash_set){
+            this->head = new FSetNode<T>(hash_set);
+        }
+
         bool invoke(OPType &op){
             return true;
         }

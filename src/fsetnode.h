@@ -19,7 +19,10 @@ class FSetNode{
         std::unordered_set<T> hash_set;
         FSetNode(){
             this->is_mutable = true;
-            std::unordered_set<T> hash_set;
+        }
+        FSetNode(std::unordered_set<T> hash_set) {
+            this->hash_set = hash_set;
+            this->is_mutable = true;
         }
 
         bool hasMember(T &key){
