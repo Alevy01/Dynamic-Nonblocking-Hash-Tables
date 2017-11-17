@@ -22,4 +22,4 @@ tpool:
 	$(CXX) $(CFLAGS) $(INC) threadpool.cc -o threadpool
 
 clean:
-	rm $(MAIN) $(OBJS)
+	rm -f $(MAIN) $(OBJS)

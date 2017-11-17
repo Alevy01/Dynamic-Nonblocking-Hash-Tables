@@ -21,11 +21,19 @@ HNode<T>::HNode(int size) {
 
 template<typename T>
 bool HNode<T>::insert(T &key) {
-    return apply(INS, key);
+    bool response = apply(INS, key);
+    if(true /*based on heuristic*/){
+        resize(true);
+    }
+    return response;
 }
 
 template<typename T>
 bool HNode<T>::remove(T &key) {
+    bool response = apply(DEL, key);
+    if(true /*based on heuristic*/){
+        resize(true);
+    }
     return apply(DEL, key);
 }
 
