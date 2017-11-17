@@ -1,3 +1,5 @@
 hnode
 .DS_Store
 .idea
+*.o
+DNHT
