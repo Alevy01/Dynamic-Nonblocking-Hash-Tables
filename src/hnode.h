@@ -4,20 +4,22 @@
  * @Email:  Andymic12@gmail.com
  * @Project: Dynamic-Nonblocking-Hash-Table
  * @Filename: hnode.h
- * @Last modified by:   Michel Andy
- * @Last modified time: 2017-11-05T21:02:22-05:00
+ * @Last modified by:   andy
+ * @Last modified time: 2017-11-17T14:04:30-05:00
  */
-
-#include<iostream>
+#include <iostream>
 #include "fset.h"
+#include <atomic>
+#include "threadpool.h"
 
 template<typename T>
 class HNode {
-    public:
+    private:
         static HNode head;  //don't think we actually need this
         FSet<T> *buckets;
         int size;
         HNode *pred;
+    public:
         HNode(int size);
         bool insert(T &key);
         bool remove(T &key);
@@ -28,6 +30,14 @@ class HNode {
 };
 
 int main(void){
+    cc::ThreadPool pool;
+    cc::Job j;
+
+    for(int i=0; i<5; i++)
+        pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
+
+    pool.joinAll();
+    
     HNode<int> *hnode = new HNode<int>(5);
     return 0;
 }

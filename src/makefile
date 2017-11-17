@@ -3,19 +3,23 @@
 # @Email:  Andymic12@gmail.com
 # @Project: Dynamic-Nonblocking-Hash-Tables
 # @Filename: makefile
-# @Last modified by:   Michel Andy
-# @Last modified time: 2017-11-05T21:11:46-05:00
+# @Last modified by:   andy
+# @Last modified time: 2017-11-17T14:02:29-05:00
 
 
 
 CXX=g++
 CFLAGS=-g -std=c++14 -pthread -Wall
 INC=-I./
-SRCS=hnode.cc
-MAIN=hnode
+SRCS=hnode.cc threadpool.cc
+OBJS=$(SRCS:.cc=.o)
+MAIN=DNHT
 
-build:
-	$(CXX) $(CFLAGS) $(INC) $(SRCS) -o $(MAIN)
+all: $(OBJS)
+	$(CXX) $(CFLAGS) $(INC) $(OBJS) -o $(MAIN)
+
+tpool:
+	$(CXX) $(CFLAGS) $(INC) threadpool.cc -o threadpool
 
 clean:
-	rm $(MAIN)
+	rm $(MAIN) $(OBJS)
