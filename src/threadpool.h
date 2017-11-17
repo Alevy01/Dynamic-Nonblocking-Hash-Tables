@@ -5,7 +5,7 @@
  * @Project: Dynamic-Nonblocking-Hash-Table
  * @Filename: threadpool.h
  * @Last modified by:   andy
- * @Last modified time: 2017-11-17T12:17:28-05:00
+ * @Last modified time: 2017-11-17T12:37:40-05:00
  */
 #ifndef __thread_pool_h__
 #define __thread_pool_h__
@@ -19,6 +19,13 @@
 #include <deque>
 
 namespace cc {
+class Job {
+    private:
+        int count;
+    public:
+        Job():count(0){}
+        void run(){std::cout<<"Ran:"<<++count<<std::endl;};
+};
 
 class ThreadPool {
     private:
@@ -34,7 +41,7 @@ class ThreadPool {
         void assignJob();
         std::function<void(void)> processJob();
     public:
-        ThreadPool(int size);
+        ThreadPool(int size=5);
         void enqueue(std::function<void(void)> job);
         int  jobCount();
         void joinAll();
@@ -42,13 +49,14 @@ class ThreadPool {
 };
 }
 
-int main(void){
-    cc::ThreadPool pool(5);
-
-    for(int i=0; i<5; i++)
-        pool.enqueue([](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; });
-
-    pool.joinAll();
-    return 0;
-}
+// int main(void){
+//     cc::ThreadPool pool;
+//     cc::Job j;
+//
+//     for(int i=0; i<5; i++)
+//         pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
+//
+//     pool.joinAll();
+//     return 0;
+// }
 #endif
