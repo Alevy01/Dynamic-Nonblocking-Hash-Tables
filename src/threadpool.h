@@ -34,7 +34,7 @@ class ThreadPool {
         std::atomic_bool exit_signal;
         std::condition_variable job_signal;
         std::condition_variable wait_var;
-        std::deque<std::function<void(void)>>  queue;
+        std::deque<std::function<void(void) > >  queue;
         std::vector<std::thread> threads;
         std::mutex terminate_mtx;
         std::mutex queue_mtx;

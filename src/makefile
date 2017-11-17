@@ -9,7 +9,7 @@
 
 
 CXX=g++
-CFLAGS=-g -std=c++14 -pthread -Wall
+CFLAGS=-g -std=c++14 -pthread -Wall -Wc++11-extensions  
 INC=-I./
 SRCS=hnode.cc threadpool.cc
 OBJS=$(SRCS:.cc=.o)
@@ -23,3 +23,6 @@ tpool:
 
 clean:
 	rm $(MAIN) $(OBJS)
+
+adam: $(OBJS)
+	/usr/local/bin/g++-6 $(CFLAGS) $(INC) $(OBJS) -o $(MAIN)
