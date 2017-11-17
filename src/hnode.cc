@@ -30,6 +30,11 @@ bool HNode<T>::remove(T &key) {
 }
 
 template<typename T>
+FSet<T> HNode<T>::getBucket(int key) {
+    return this->buckets[key];
+}
+
+template<typename T>
 bool HNode<T>::contains(T &key) {
     FSet<T> curr_bucket = this->buckets[key % this->size];
     if(!curr_bucket.head->is_mutable) {
@@ -62,9 +67,16 @@ void HNode<T>::resize(bool grow){
 
 template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
-    std::cout << type << std::endl;
-    std::cout << key << std::endl;
-    return false;
+    FSetOp *fSetOp = new FSetOp(type, key);
+    while(1) {
+        FSet<T> bucket = this->buckets[key % this->size];
+        if(bucket == NULL) {
+            bucket = initBucket(this, key % this->size);
+        }
+        if(bucket.invoke(fSetOp)) {
+            return fSetOp->getResponse();
+        }
+    }
 }
 
 template<typename T>
@@ -89,8 +101,9 @@ FSet<T> HNode<T>::initBucket(HNode t, int i) {
             new_set.insert(tmp_set.begin(), tmp_set.end());
         }
         FSet<T> *return_set = new FSet<T>(new_set);
-        std::atomic<FSet<T>> b = t.buckets[i];
+        std::atomic<FSet<T> > b = t.buckets[i];
         b.compare_exchange_weak(NULL, return_set);
     }
     return t.buckets[i];
 }
+
