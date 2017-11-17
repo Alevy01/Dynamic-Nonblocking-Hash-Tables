@@ -75,7 +75,7 @@ void HNode<T>::resize(bool grow){
 
 template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
-    FSetOp *fSetOp = new FSetOp(type, key);
+    FSetOp<T> *fSetOp = new FSetOp<T>(type, key);
     while(1) {
         FSet<T> bucket = this->buckets[key % this->size];
         if(bucket == NULL) {
