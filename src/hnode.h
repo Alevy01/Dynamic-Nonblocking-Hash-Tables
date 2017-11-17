@@ -15,7 +15,6 @@
 template<typename T>
 class HNode {
     private:
-        static HNode head;  //don't think we actually need this
         FSet<T> *buckets;
         int size;
         HNode *pred;
@@ -26,18 +25,20 @@ class HNode {
         bool contains(T &key);
         void resize(bool grow);
         bool apply(OPType type, T &key);
+        FSet<T> getBucket(int key);
         FSet<T> initBucket(HNode t, int hashIndex);
 };
 
+
 int main(void){
-    cc::ThreadPool pool;
-    cc::Job j;
+    // cc::ThreadPool pool;
+    // cc::Job j;
 
-    for(int i=0; i<5; i++)
-        pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
+    // for(int i=0; i<5; i++)
+    //     pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
 
-    pool.joinAll();
-    
-    HNode<int> *hnode = new HNode<int>(5);
+    // pool.joinAll();
+
+HNode<int> *hnode = new HNode<int>(5);
     return 0;
 }
