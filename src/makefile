@@ -3,8 +3,8 @@
 # @Email:  Andymic12@gmail.com
 # @Project: Dynamic-Nonblocking-Hash-Tables
 # @Filename: makefile
-# @Last modified by:   Michel Andy
-# @Last modified time: 2017-11-05T21:11:46-05:00
+# @Last modified by:   andy
+# @Last modified time: 2017-11-16T21:13:45-05:00
 
 
 
@@ -16,6 +16,9 @@ MAIN=hnode
 
 build:
 	$(CXX) $(CFLAGS) $(INC) $(SRCS) -o $(MAIN)
+
+tpool:
+	$(CXX) $(CFLAGS) $(INC) threadpool.cc -o threadpool 
 
 clean:
 	rm $(MAIN)
