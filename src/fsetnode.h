@@ -40,5 +40,9 @@ class FSetNode{
             typename std::unordered_set<T>::const_iterator got = this->m_set.find(key);
             return got == this->m_set.end();
         }
+
+        int getSize(){
+            return m_set.size();
+        }
 };
 #endif

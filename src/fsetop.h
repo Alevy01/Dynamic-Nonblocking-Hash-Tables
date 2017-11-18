@@ -20,7 +20,7 @@ class FSetOp {
         bool done;
         bool response;
     public:
-        FSetOp(OPType otype, int key){
+        FSetOp(OPType otype, T &key){
             this->otype = otype;
             this->key = key;
             this->done = false;
