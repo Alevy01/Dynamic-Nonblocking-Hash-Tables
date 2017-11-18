@@ -10,24 +10,43 @@
 
 #ifndef _fsetnode_h_
 #define _fsetnode_h_
-#include<unordered_set>
+#include <unordered_set>
 
 template<typename T>
 class FSetNode{
     public:
         bool is_mutable;
-        std::unordered_set<T> hash_set;
+        std::unordered_set<T> m_set;
         FSetNode(){
             this->is_mutable = true;
         }
-        FSetNode(std::unordered_set<T> hash_set) {
-            this->hash_set = hash_set;
+        
+        FSetNode(std::unordered_set<T> &m_set) {
+            this->m_set = m_set;
             this->is_mutable = true;
+        }
+       
+        bool remove(T &key){
+            auto ret = m_set.erase(key);
+            return (ret == this->m_set.end()) ? false : true;
+        }
+
+        bool insert(T &key){
+            auto ret = m_set.insert(key);
+            return ret.second;
         }
 
         bool hasMember(T &key){
-            typename std::unordered_set<T>::const_iterator got = this->hash_set.find(key);
-            return got == this->hash_set.end();
+            typename std::unordered_set<T>::const_iterator got = this->m_set.find(key);
+            return got == this->m_set.end();
+        }
+
+        std::unordered_set<T> getSet() {
+            return m_set;
+        }
+
+        int getSize(){
+            return m_set.size();
         }
 };
 #endif
