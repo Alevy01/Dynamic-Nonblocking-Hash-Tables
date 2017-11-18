@@ -97,25 +97,25 @@ FSet<T> HNode<T>::initBucket(int i) {
     FSet<T> curr_bucket = this->buckets[i];
     HNode *prev_hnode = this->pred;
     FSet<T> new_bucket;
-    FSet<T> new_set;
+    std::unordered_set<T> new_set;
     int prev_size = prev_hnode->size;
     int curr_size = this->size;
 
     if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) {        
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
-            new_bucket.freeze(); 
+            new_set = new_bucket.freeze(); 
 
         } else { 
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
             //should return the frozen m_set
-            //new_set = new_bucket.freeze();
-            //FSet<T> tmp_set = larger_bucket.freeze();
-            //new_set.insert(tmp_set.begin(), tmp_set.end());
+            new_set = new_bucket.freeze();
+            std::unordered_set<T> tmp_set = larger_bucket.freeze();
+            new_set.insert(tmp_set.begin(), tmp_set.end());
         }
         FSet<T> *return_set = new FSet<T>(new_set);
-        //std::atomic<FSet<T> > b = this->buckets[i];
+        std::atomic<FSet<T> > b ; b.store(this->buckets[i]);
         //b.compare_exchange_weak(NULL, return_set);
     }
     return this->buckets[i];
