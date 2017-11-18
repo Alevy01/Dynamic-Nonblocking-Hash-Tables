@@ -31,7 +31,7 @@ class FSetNode{
             return ret;
         }
 
-        bool insert(T key){
+        bool insert(T &key){
             auto ret = m_set.insert(key);
             return ret.second;
         }
