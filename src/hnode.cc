@@ -39,9 +39,7 @@ bool HNode<T>::remove(T &key) {
 
 template<typename T>
 FSet<T> HNode<T>::getBucket(int key) {
-    //return this->buckets[key];
-    FSet<T> t;
-    return t;
+    return this->buckets[key];
 }
 
 template<typename T>
@@ -78,16 +76,18 @@ void HNode<T>::resize(bool grow){
 
 template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
-    FSetOp<T> *fSetOp = new FSetOp<T>(type, key);
+    FSetOp<T> fSetOp(type, key);
     while(1) {
-        //int hash = key % this->size;
-        //FSet<T> bucket = this->getBucket(hash);
-        ////if(bucket.getHead()->getSize() == 0) {
-        ////    bucket = initBucket(hash);
-        ////}
-        //if(bucket.invoke(*fSetOp)) {
-        //    return fSetOp->getResponse();
-        //}
+        int hash = key % this->size;
+        FSet<T> bucket = this->getBucket(hash);
+        
+        if(bucket.getHead()->getSize() == 0) {
+            bucket = initBucket(hash);
+        }
+        
+        if(bucket.invoke(fSetOp)) {
+            return fSetOp.getResponse();
+        }
     }
     return true;
 }
@@ -105,18 +105,19 @@ FSet<T> HNode<T>::initBucket(int i) {
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
             new_set = new_bucket.freeze(); 
-
         } else { 
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
-            //should return the frozen m_set
             new_set = new_bucket.freeze();
             std::unordered_set<T> tmp_set = larger_bucket.freeze();
             new_set.insert(tmp_set.begin(), tmp_set.end());
         }
-        FSet<T> *return_set = new FSet<T>(new_set);
-        std::atomic<FSet<T> > b ; b.store(this->buckets[i]);
-        //b.compare_exchange_weak(NULL, return_set);
+
+        FSet<T> return_set(new_set);
+        std::atomic<FSet<T>> b {{this->buckets[i]}};
+
+        if(b.load().getHead()->getSet().size() == 0)
+               b.store(return_set);
     }
     return this->buckets[i];
 }

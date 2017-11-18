@@ -61,7 +61,7 @@ class FSet{
                 fop.setStatus(true);
             }
 
-            return fop.getStatus;
+            return fop.getStatus();
         }
 
         std::unordered_set<T> freeze(){
