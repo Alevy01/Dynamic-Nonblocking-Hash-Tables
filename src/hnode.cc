@@ -80,41 +80,43 @@ template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
     FSetOp<T> *fSetOp = new FSetOp<T>(type, key);
     while(1) {
-        int hash = key % this->size;
-        FSet<T> bucket = this->getBucket(hash);
-        //if(bucket.getHead()->getSize() == 0) {
-        //    bucket = initBucket(hash);
+        //int hash = key % this->size;
+        //FSet<T> bucket = this->getBucket(hash);
+        ////if(bucket.getHead()->getSize() == 0) {
+        ////    bucket = initBucket(hash);
+        ////}
+        //if(bucket.invoke(*fSetOp)) {
+        //    return fSetOp->getResponse();
         //}
-        if(bucket.invoke(*fSetOp)) {
-            return fSetOp->getResponse();
-        }
     }
+    return true;
 }
 
 template<typename T>
 FSet<T> HNode<T>::initBucket(int i) {
     FSet<T> curr_bucket = this->buckets[i];
-    HNode *prev_hnode = this.pred;
+    HNode *prev_hnode = this->pred;
     FSet<T> new_bucket;
     FSet<T> new_set;
     int prev_size = prev_hnode->size;
     int curr_size = this->size;
 
-    if(curr_bucket == NULL && prev_hnode != NULL) {        
+    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) {        
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
-            new_set = new_bucket.freeze(); 
+            new_bucket.freeze(); 
 
         } else { 
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
-            new_set = new_bucket.freeze();
-            FSet<T> tmp_set = larger_bucket.freeze();
-            new_set.insert(tmp_set.begin(), tmp_set.end());
+            //should return the frozen m_set
+            //new_set = new_bucket.freeze();
+            //FSet<T> tmp_set = larger_bucket.freeze();
+            //new_set.insert(tmp_set.begin(), tmp_set.end());
         }
         FSet<T> *return_set = new FSet<T>(new_set);
-        std::atomic<FSet<T> > b = this->buckets[i];
-        b.compare_exchange_weak(NULL, return_set);
+        //std::atomic<FSet<T> > b = this->buckets[i];
+        //b.compare_exchange_weak(NULL, return_set);
     }
     return this->buckets[i];
 }

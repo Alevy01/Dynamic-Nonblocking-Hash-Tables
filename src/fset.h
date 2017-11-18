@@ -20,8 +20,8 @@ template<typename T>
 class FSet{
     private:
         FSetNode<T> * head;
-        std::mutex fset_mtx;
-        std::mutex read_mtx;
+        //std::mutex fset_mtx;
+        //std::mutex read_mtx;
         bool _mutable;
     public:
         FSet(){
@@ -35,7 +35,7 @@ class FSet{
         }
 
         bool invoke(FSetOp<T> &fop){
-            std::lock_guard<std::mutex> lck(fset_mtx);
+            //std::lock_guard<std::mutex> lck(fset_mtx);
             //check whether FSet is mutable and 
             //the operation was not applied before
             if(_mutable || fop.isDone()){
@@ -64,19 +64,19 @@ class FSet{
             return fop.getStatus;
         }
 
-        void freeze(){
-            std::lock_guard<std::mutex> lck(fset_mtx) ;
+        std::unordered_set<T> freeze(){
+            //std::lock_guard<std::mutex> lck(fset_mtx) ;
             _mutable = false;
             return this->head->getSet();
         }
 
         bool hasMember(T &key){
-            std::lock_guard<std::mutex> lck(read_mtx) ;
+            //std::lock_guard<std::mutex> lck(read_mtx) ;
             return this->head->hasMember(key);
         }
 
         bool getResponse(FSetOp<T> &op){
-            std::lock_guard<std::mutex> lck(fset_mtx) ;
+            //std::lock_guard<std::mutex> lck(fset_mtx) ;
             return op.getResponse();
         }
 

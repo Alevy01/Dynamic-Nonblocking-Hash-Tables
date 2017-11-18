@@ -40,6 +40,10 @@ class FSetNode{
             typename std::unordered_set<T>::const_iterator got = this->m_set.find(key);
             return got == this->m_set.end();
         }
+        
+        std::unordered_set<T> getSet(){
+            return m_set;
+        }
 
         std::unordered_set<T> getSet() {
             return m_set;
