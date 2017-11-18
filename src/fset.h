@@ -67,6 +67,7 @@ class FSet{
         void freeze(){
             std::lock_guard<std::mutex> lck(fset_mtx) ;
             _mutable = false;
+            return this->head->getSet();
         }
 
         bool hasMember(T &key){

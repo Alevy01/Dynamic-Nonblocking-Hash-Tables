@@ -41,6 +41,10 @@ class FSetNode{
             return got == this->m_set.end();
         }
 
+        std::unordered_set<T> getSet() {
+            return m_set;
+        }
+
         int getSize(){
             return m_set.size();
         }
