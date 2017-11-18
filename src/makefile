@@ -9,17 +9,20 @@
 
 
 CXX=g++
-CFLAGS=-g -std=c++14 -pthread -Wall
+CFLAGS=-g -std=c++14 -pthread -Wall -m64 -march=native
 INC=-I./
 SRCS=hnode.cc threadpool.cc
 OBJS=$(SRCS:.cc=.o)
 MAIN=DNHT
 
-all: $(OBJS)
-	$(CXX) $(CFLAGS) $(INC) $(OBJS) -o $(MAIN)
+#all: $(OBJS)
+#	$(CXX) $(CFLAGS) $(INC) $(OBJS) -o $(MAIN)
+
+all:
+	$(CXX) $(CFLAGS) $(INC) $(SRCS) -o $(MAIN)
 
 tpool:
 	$(CXX) $(CFLAGS) $(INC) threadpool.cc -o threadpool
 
 clean:
-	rm $(MAIN) $(OBJS)
+	rm -f $(MAIN) $(OBJS)

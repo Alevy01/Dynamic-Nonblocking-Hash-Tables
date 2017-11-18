@@ -21,11 +21,19 @@ HNode<T>::HNode(int size) {
 
 template<typename T>
 bool HNode<T>::insert(T &key) {
-    return apply(INS, key);
+    bool response = apply(INS, key);
+    if(false/*based on heuristic*/){
+        resize(true);
+    }
+    return response;
 }
 
 template<typename T>
 bool HNode<T>::remove(T &key) {
+    bool response = apply(DEL, key);
+    if(false /*based on heuristic*/){
+        resize(true);
+    }
     return apply(DEL, key);
 }
 
@@ -52,58 +60,65 @@ void HNode<T>::resize(bool grow){
     int new_size = grow ? this->size*2 : this->size/2;
    
     //creating new buckets of at least the size of the old bucket
-    std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
+    //std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
     
-    if(new_buckets->size >= size && grow){
-        for(int i=0; i<new_buckets->size -1; i++){
+    //if(new_buckets->size >= size && grow){
+        for(int i=0; i<new_size; i++){
             //migrate each bucket from old to the new
-            initBucket(new_buckets, i);
+            initBucket(i);
         }
+        this->pred = NULL;
         
         //setting the old bucket to null
-        new_buckets.compare_exhange_weak(this->buckets, new_buckets);
-    }
+        //new_buckets.compare_exhange_weak(this->buckets, new_buckets);
+    //}
 }
 
 template<typename T>
 bool HNode<T>::apply(OPType type, T &key) {
-    FSetOp *fSetOp = new FSetOp(type, key);
+    FSetOp<T> fSetOp(type, key);
     while(1) {
-        FSet<T> bucket = this->buckets[key % this->size];
-        if(bucket == NULL) {
-            bucket = initBucket(this, key % this->size);
+        int hash = key % this->size;
+        FSet<T> bucket = this->getBucket(hash);
+        
+        if(bucket.getHead()->getSize() == 0) {
+            bucket = initBucket(hash);
         }
+        
         if(bucket.invoke(fSetOp)) {
-            return fSetOp->getResponse();
+            return fSetOp.getResponse();
         }
     }
+    return true;
 }
 
 template<typename T>
-FSet<T> HNode<T>::initBucket(HNode t, int i) {
-    FSet<T> curr_bucket = t->buckets[i];
-    HNode *prev_hnode = t.pred;
+FSet<T> HNode<T>::initBucket(int i) {
+    FSet<T> curr_bucket = this->buckets[i];
+    HNode *prev_hnode = this->pred;
     FSet<T> new_bucket;
-    FSet<T> new_set;
+    std::unordered_set<T> new_set;
     int prev_size = prev_hnode->size;
-    int curr_size = t->size;
+    int curr_size = this->size;
 
-    if(curr_bucket == NULL && prev_hnode != NULL) {        
+    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) {        
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
             new_set = new_bucket.freeze(); 
-
         } else { 
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
             new_set = new_bucket.freeze();
-            FSet<T> tmp_set = larger_bucket.freeze();
+            std::unordered_set<T> tmp_set = larger_bucket.freeze();
             new_set.insert(tmp_set.begin(), tmp_set.end());
         }
-        FSet<T> *return_set = new FSet<T>(new_set);
-        std::atomic<FSet<T> > b = t.buckets[i];
-        b.compare_exchange_weak(NULL, return_set);
+
+        FSet<T> return_set(new_set);
+        std::atomic<FSet<T>> b {{this->buckets[i]}};
+
+        if(b.load().getHead()->getSet().size() == 0)
+               b.store(return_set);
     }
-    return t.buckets[i];
+    return this->buckets[i];
 }
 

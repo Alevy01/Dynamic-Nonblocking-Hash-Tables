@@ -26,7 +26,7 @@ class HNode {
         void resize(bool grow);
         bool apply(OPType type, T &key);
         FSet<T> getBucket(int key);
-        FSet<T> initBucket(HNode t, int hashIndex);
+        FSet<T> initBucket(int hashIndex);
 };
 
 
@@ -39,6 +39,10 @@ int main(void){
 
     // pool.joinAll();
 
-HNode<int> *hnode = new HNode<int>(5);
+    HNode<int> *hnode = new HNode<int>(5);
+    
+    for(int i=0; i<5; i++)
+        hnode->insert(i);
+
     return 0;
 }

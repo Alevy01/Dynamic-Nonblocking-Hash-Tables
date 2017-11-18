@@ -26,9 +26,9 @@ class FSetNode{
             this->is_mutable = true;
         }
        
-        bool remove(T &key){
-            auto ret = m_set.erase(key);
-            return (ret == this->m_set.end()) ? false : true;
+        bool remove(T key){
+            size_t ret = m_set.erase(key);
+            return ret;
         }
 
         bool insert(T &key){
@@ -37,10 +37,10 @@ class FSetNode{
         }
 
         bool hasMember(T &key){
-            typename std::unordered_set<T>::const_iterator got = this->m_set.find(key);
-            return got == this->m_set.end();
+            auto got = this->m_set.find(key);
+            return got != this->m_set.end();
         }
-
+        
         std::unordered_set<T> getSet() {
             return m_set;
         }
