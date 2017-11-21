@@ -79,6 +79,7 @@ bool HNode<T>::apply(OPType type, T &key) {
     FSetOp<T> fSetOp(type, key);
     while(1) {
         int hash = key % this->size;
+        std::cout << hash << std::endl;
         FSet<T> bucket = this->getBucket(hash);
         
         if(bucket.getHead()->getSize() == 0) {
@@ -98,10 +99,10 @@ FSet<T> HNode<T>::initBucket(int i) {
     HNode *prev_hnode = this->pred;
     FSet<T> new_bucket;
     std::unordered_set<T> new_set;
-    int prev_size = prev_hnode->size;
     int curr_size = this->size;
 
-    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) {        
+    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) { 
+        int prev_size = prev_hnode->size; 
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
             new_set = new_bucket.freeze(); 
@@ -119,6 +120,6 @@ FSet<T> HNode<T>::initBucket(int i) {
         if(b.load().getHead()->getSet().size() == 0)
                b.store(return_set);
     }
-    return this->buckets[i];
+    return curr_bucket;
 }
 
