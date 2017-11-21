@@ -31,12 +31,12 @@ class FSetNode{
             return ret;
         }
 
-        bool insert(T &key){
+        bool insert(T key){
             auto ret = m_set.insert(key);
             return ret.second;
         }
 
-        bool hasMember(T &key){
+        bool hasMember(T key){
             auto got = this->m_set.find(key);
             return got != this->m_set.end();
         }
