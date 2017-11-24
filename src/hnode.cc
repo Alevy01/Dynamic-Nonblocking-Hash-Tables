@@ -45,7 +45,7 @@ FSet<T> HNode<T>::getBucket(int key) {
 template<typename T>
 bool HNode<T>::contains(T &key) {
     FSet<T> curr_bucket = this->buckets[key % this->size];
-    if(!curr_bucket.head->is_mutable) {
+    if(!curr_bucket.getHead()->is_mutable) {
         HNode *prev_hnode = this->pred;
         if(prev_hnode != NULL) {
             curr_bucket = prev_hnode->buckets[key % prev_hnode->size];
@@ -79,7 +79,6 @@ bool HNode<T>::apply(OPType type, T &key) {
     FSetOp<T> fSetOp(type, key);
     while(1) {
         int hash = key % this->size;
-        std::cout << hash << std::endl;
         FSet<T> bucket = this->getBucket(hash);
         
         if(bucket.getHead()->getSize() == 0) {

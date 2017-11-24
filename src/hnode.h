@@ -11,6 +11,7 @@
 #include "fset.h"
 #include <atomic>
 #include "threadpool.h"
+#include <unordered_set>
 
 template<typename T>
 class HNode {
@@ -41,8 +42,8 @@ int main(void){
 
     HNode<int> *hnode = new HNode<int>(5);
     
-    for(int i=0; i<5; i++)
-        hnode->insert(i);
+    int i = 1;
+    hnode->insert(i);
 
     return 0;
 }
