@@ -27,7 +27,7 @@ class FSetNode{
         }
        
         bool remove(T key){
-            size_t ret = m_set.erase(key);
+            bool ret = m_set.erase(key);
             return ret;
         }
 
