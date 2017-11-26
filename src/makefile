@@ -6,10 +6,18 @@
 # @Last modified by:   andy
 # @Last modified time: 2017-11-17T14:02:29-05:00
 
+CXX=g++-5
 
+OS := $(shell uname)
 
-CXX=g++
-CFLAGS=-g -std=c++14 -pthread -Wall -m64 -march=native
+#Use clang compiler on MAC
+ifeq ($(OS),Darwin)
+	CXX=clang
+endif
+
+$(info Compiling for platform: $(OS))
+
+CFLAGS=-g -std=c++11 -pthread -Wall -m64 -march=native 
 INC=-I./
 SRCS=hnode.cc threadpool.cc
 OBJS=$(SRCS:.cc=.o)
