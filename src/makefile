@@ -12,7 +12,7 @@ OS := $(shell uname)
 
 #Use clang compiler on MAC
 ifeq ($(OS),Darwin)
-	CXX=clang
+	CXX=clang++
 endif
 
 $(info Compiling for platform: $(OS))
