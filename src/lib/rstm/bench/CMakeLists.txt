@@ -32,7 +32,8 @@ set(
   DisjointBench
   MCASBench
   ReadWriteNBench
-  ReadNWrite1Bench)
+  ReadNWrite1Bench
+  hnode)
 
 append_cxx_flags(${CMAKE_THREAD_INCLUDE})
 
