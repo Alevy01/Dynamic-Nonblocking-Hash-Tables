@@ -11,6 +11,42 @@
 #include <iostream>
 #include "hnode.h"
 #include <atomic>
+#include <cstdlib>
+#include <signal.h>
+#include <pthread.h>
+#include <api/api.hpp>
+#include <common/platform.hpp>
+#include <common/locks.hpp>
+#include "bmconfig.hpp"
+#include "../include/api/api.hpp"
+
+
+const int THREAD_COUNT = 4;
+const int NUM_TRANSACTIONS = 100000;
+
+// shared variable that will be incremented by transactions
+int x = 0;
+
+Config::Config() :
+    bmname(""),
+    duration(1),
+    execute(0),
+    threads(THREAD_COUNT),
+    nops_after_tx(0),
+    elements(256),
+    lookpct(34),
+    inspct(66),
+    sets(1),
+    ops(1),
+    time(0),
+    running(true),
+    txcount(0)
+{
+}
+
+Config CFG TM_ALIGN(64);
+
+
 
 template<typename T>
 HNode<T>::HNode(int size) {
@@ -32,9 +68,9 @@ template<typename T>
 bool HNode<T>::remove(T &key) {
     bool response = apply(DEL, key);
     if(false /*based on heuristic*/){
-        resize(true);
+        resize(false);
     }
-    return apply(DEL, key);
+    return response;
 }
 
 template<typename T>
@@ -120,5 +156,17 @@ FSet<T> HNode<T>::initBucket(int i) {
                b.store(return_set);
     }
     return curr_bucket;
+}
+
+int main(void){
+
+    std::cout << "Testing" << std::endl;
+
+    // HNode<int> *hnode = new HNode<int>(5);
+    
+    // int i = 1;
+    // hnode->insert(i);
+
+    return 0;
 }
 

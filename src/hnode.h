@@ -31,19 +31,19 @@ class HNode {
 };
 
 
-int main(void){
-    // cc::ThreadPool pool;
-    // cc::Job j;
+// int main(void){
+//     // cc::ThreadPool pool;
+//     // cc::Job j;
 
-    // for(int i=0; i<5; i++)
-    //     pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
+//     // for(int i=0; i<5; i++)
+//     //     pool.enqueue([&j](){ std::cout<<"Hello from: "<<std::this_thread::get_id()<<std::endl; j.run();});
 
-    // pool.joinAll();
+//     // pool.joinAll();
 
-    HNode<int> *hnode = new HNode<int>(5);
+//     HNode<int> *hnode = new HNode<int>(5);
     
-    int i = 1;
-    hnode->insert(i);
+//     int i = 1;
+//     hnode->insert(i);
 
-    return 0;
-}
+//     return 0;
+// }
