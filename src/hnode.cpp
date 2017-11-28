@@ -57,10 +57,17 @@ HNode<T>::HNode(int size) {
 
 template<typename T>
 bool HNode<T>::insert(T &key) {
-    bool response = apply(INS, key);
-    if(false/*based on heuristic*/){
-        resize(true);
+     // each thread must be initialized before running transactions
+    TM_THREAD_INIT();
+    TM_BEGIN(atomic) 
+    {
+        bool response = apply(INS, key);
+        if(false/*based on heuristic*/){
+            resize(true);
+        }
     }
+    TM_END;
+    TM_THREAD_SHUTDOWN();
     return response;
 }
 
@@ -158,14 +165,52 @@ FSet<T> HNode<T>::initBucket(int i) {
     return curr_bucket;
 }
 
+
+void* run_thread(HNode hnode, void* i) {
+    int i = 0;
+    TM_THREAD_INIT();
+    TM_BEGIN(atomic)
+    {   
+        hnode->insert(i++);
+    }
+    TM_END; // mark the end of the transaction
+    TM_THREAD_SHUTDOWN();
+}
+
 int main(void){
+    TM_SYS_INIT();
 
-    std::cout << "Testing" << std::endl;
-
-    // HNode<int> *hnode = new HNode<int>(5);
+    // original thread must be initalized also
+    TM_THREAD_INIT();
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
+    for (uint32_t i = 0; i < CFG.threads; i++)
+        args[i] = (void*)i;
     
-    // int i = 1;
-    // hnode->insert(i);
+    int i = 1;
+    HNode<int> *hnode = new HNode<int>(5);
+
+    // actually create the threads
+    for (uint32_t j = 1; j < CFG.threads; j++) {
+        // need to figure out how to call insert here on the hnode.
+        // i++ should be the arg into insert
+        pthread_create(&tid[j], &attr, &run_thread, hnode, args[j]);
+    }
+    
+    // all of the other threads should be queued up, waiting to run the
+    // benchmark, but they can't until this thread starts the benchmark
+    // too...
+    run_thread(args[0]);
+
+    // everyone should be done.  Join all threads so we don't leave anything
+    // hanging around
+    for (uint32_t k = 1; k < CFG.threads; k++)
+        pthread_join(tid[k], NULL);
+
+    // And call sys shutdown stuff
+    TM_SYS_SHUTDOWN();
+    std::cout << "Testing" << std::endl;
 
     return 0;
 }
