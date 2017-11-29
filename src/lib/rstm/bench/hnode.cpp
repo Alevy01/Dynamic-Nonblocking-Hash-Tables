@@ -112,6 +112,9 @@ bool HNode<T>::contains(T &key) {
     }
     TM_END;
     TM_THREAD_SHUTDOWN(); 
+    FSetNode<T> * h = curr_bucket.getHead();
+    std::cout << "\n\n\n";
+    std::cout << key << std::endl;
     return curr_bucket.hasMember(key);
 }
 
@@ -199,7 +202,6 @@ FSet<T> HNode<T>::initBucket(int i) {
         if(b.load().getHead()->getSet().size() == 0)
                b.store(return_set);
     }
-   // std::cout << "0000" << std::endl;
     return curr_bucket;
 }
 
@@ -211,15 +213,13 @@ int main(void){
     HNode<int> *hnode = new HNode<int>(2);
     clock_t begin = clock();
 
-    for(int i = 0; i< 250; i++) {
+    for(int i = 0; i< 10; i++) {
         hnode->insert(i);
     }
-    for(int i = 0; i< 250; i++) {
-    	if(!hnode->contains(i)){
-		std::cout << i << std::endl;
-	}
+    for(int i = 0; i< 10; i++) {
+        hnode->contains(i);
     }
-    for(int i = 0; i< 250; i++) {
+    for(int i = 0; i< 10; i++) {
         hnode->remove(i);
     }
     clock_t end = clock();
