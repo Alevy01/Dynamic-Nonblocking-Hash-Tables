@@ -206,12 +206,16 @@ int main(void){
     TM_THREAD_INIT();
     int i = 1;
     HNode<int> *hnode = new HNode<int>(2);
-    
-    std::cout << hnode->size << std::endl;
-    hnode->insert(i);
-    std::cout << hnode->size << std::endl;
-    hnode->remove(i);
-    std::cout << hnode->size << std::endl;
+    for(int i = 0; i< 1000; i++) {
+        hnode->insert(i);
+    }
+    for(int i = 0; i< 1000; i++) {
+        hnode->contains(i);
+    }
+    for(int i = 0; i< 1000; i++) {
+        hnode->remove(i);
+    }
+ 
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
     std::cout << "Testing" << std::endl;
