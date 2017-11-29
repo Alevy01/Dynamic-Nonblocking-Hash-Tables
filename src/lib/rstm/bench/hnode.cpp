@@ -96,10 +96,10 @@ FSet<T> HNode<T>::getBucket(int key) {
 
 template<typename T>
 bool HNode<T>::contains(T &key) {
+    FSet<T> curr_bucket = this->buckets[key % this->size];
     TM_THREAD_INIT();
     TM_BEGIN(atomic)
     {
-        FSet<T> curr_bucket = this->buckets[key % this->size];
         if(!curr_bucket.getHead()->is_mutable) {
             HNode *prev_hnode = this->pred;
             if(prev_hnode != NULL) {
