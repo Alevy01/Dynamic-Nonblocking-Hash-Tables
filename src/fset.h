@@ -4,8 +4,8 @@
  * @Email:  Andymic12@gmail.com
  * @Project: Dynamic-Nonblocking-Hash-Table
  * @Filename: fset.h
- * @Last modified by:   Michel Andy
- * @Last modified time: 2017-11-05T21:03:39-05:00
+ * @Last modified by:   floki
+ * @Last modified time: 2017-11-29T18:27:52-05:00
  */
 
 #ifndef _fset_h_
@@ -35,25 +35,25 @@ class FSet{
         }
 
         bool invoke(FSetOp<T> &fop){
-          
+
             //std::lock_guard<std::mutex> lck(fset_mtx);
-            //check whether FSet is mutable and 
+            //check whether FSet is mutable and
             //the operation was not applied before
             if(_mutable || fop.isDone()){
                 OPType opt = fop.getOpt();
                 bool status = false;
-                
+
                 if(opt == INS){
-                  status = head->insert(fop.getKey());  
-                 
+                  status = head->insert(fop.getKey());
+
                   if(!status)
                      std::runtime_error("Duplicate key");
 
                 }else if(opt == DEL){
                   status = head->remove(fop.getKey());
-                  
-                  if(!status)
-                   std::cerr<<"Key was not found\n";
+
+                  //if(!status)
+                   //std::cerr<<"Key was not found\n";
 
                 }else{
                     std::invalid_argument("Unsupported OPType");

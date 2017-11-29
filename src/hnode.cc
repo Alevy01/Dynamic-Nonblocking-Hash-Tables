@@ -4,25 +4,28 @@
  * @Email:  Andymic12@gmail.com
  * @Project: Dynamic-Nonblocking-Hash-Table
  * @Filename: hnode.cc
- * @Last modified by:   Michel Andy
- * @Last modified time: 2017-11-05T21:11:15-05:00
+ * @Last modified by:   floki
+ * @Last modified time: 2017-11-29T17:36:32-05:00
  */
 
 #include <iostream>
 #include "hnode.h"
 #include <atomic>
+#include <cstring>
 
 template<typename T>
 HNode<T>::HNode(int size) {
     this->buckets = new FSet<T>[size];
     this->size = size;
     this->pred = NULL;
+    this->used = 0;
 }
 
 template<typename T>
 bool HNode<T>::insert(T &key) {
     bool response = apply(INS, key);
-    if(false/*based on heuristic*/){
+    //simple heuristic for growing
+    if(this->used >= (this->size/2)){
         resize(true);
     }
     return response;
@@ -31,8 +34,9 @@ bool HNode<T>::insert(T &key) {
 template<typename T>
 bool HNode<T>::remove(T &key) {
     bool response = apply(DEL, key);
-    if(false /*based on heuristic*/){
-        resize(true);
+    //simple heuristic for shrinking
+    if(this->used < (this->size/2)){
+        resize(false);
     }
     return apply(DEL, key);
 }
@@ -57,18 +61,24 @@ bool HNode<T>::contains(T &key) {
 template<typename T>
 void HNode<T>::resize(bool grow){
     //calculate new size: grow or shrink
+    std::cout<<"RESISZE\n";
     int new_size = grow ? this->size*2 : this->size/2;
-   
+
     //creating new buckets of at least the size of the old bucket
     //std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
-    
+    if(grow){
+      FSet<T>* newArr = new FSet<T>[new_size];
+      std::memcpy(newArr, this->buckets, size * sizeof(FSet<T>));
+      delete [] this->buckets;
+      this->buckets = newArr;
+    }
     //if(new_buckets->size >= size && grow){
         for(int i=0; i<new_size; i++){
             //migrate each bucket from old to the new
             initBucket(i);
         }
         this->pred = NULL;
-        
+        this->size = new_size;
         //setting the old bucket to null
         //new_buckets.compare_exhange_weak(this->buckets, new_buckets);
     //}
@@ -80,11 +90,18 @@ bool HNode<T>::apply(OPType type, T &key) {
     while(1) {
         int hash = key % this->size;
         FSet<T> bucket = this->getBucket(hash);
-        
+
         if(bucket.getHead()->getSize() == 0) {
             bucket = initBucket(hash);
+            if(type == INS){
+              used++;
+            }
+        }else if(bucket.getHead()->getSize() == 1){
+          if(type == DEL) {
+              used--;
+          }
         }
-        
+
         if(bucket.invoke(fSetOp)) {
             return fSetOp.getResponse();
         }
@@ -100,12 +117,12 @@ FSet<T> HNode<T>::initBucket(int i) {
     std::unordered_set<T> new_set;
     int curr_size = this->size;
 
-    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) { 
-        int prev_size = prev_hnode->size; 
-        if(curr_size == (prev_size*2)) { 
+    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) {
+        int prev_size = prev_hnode->size;
+        if(curr_size == (prev_size*2)) {
             new_bucket = prev_hnode->buckets[i % prev_size];
-            new_set = new_bucket.freeze(); 
-        } else { 
+            new_set = new_bucket.freeze();
+        } else {
             new_bucket = prev_hnode->buckets[i];
             FSet<T> larger_bucket = prev_hnode->buckets[i + curr_size];
             new_set = new_bucket.freeze();
@@ -121,4 +138,3 @@ FSet<T> HNode<T>::initBucket(int i) {
     }
     return curr_bucket;
 }
-
