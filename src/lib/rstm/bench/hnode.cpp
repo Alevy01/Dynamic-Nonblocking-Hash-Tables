@@ -171,8 +171,9 @@ int main(void){
 
     // original thread must be initalized also
     TM_THREAD_INIT();
-    
+    int i = 1;
     HNode<int> *hnode = new HNode<int>(5);
+    hnode->insert(1);
 
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
