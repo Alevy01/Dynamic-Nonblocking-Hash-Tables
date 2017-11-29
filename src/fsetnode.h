@@ -32,6 +32,7 @@ class FSetNode{
         }
 
         bool insert(T key){
+            std::cout << "Key: " << key << endl;
             auto ret = m_set.insert(key);
             return ret.second;
         }
