@@ -35,7 +35,6 @@ class FSet{
         }
 
         bool invoke(FSetOp<T> &fop){
-          
             //std::lock_guard<std::mutex> lck(fset_mtx);
             //check whether FSet is mutable and 
             //the operation was not applied before
