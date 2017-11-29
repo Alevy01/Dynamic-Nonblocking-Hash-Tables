@@ -24,7 +24,7 @@
 
 const int THREAD_COUNT = 4;
 const int NUM_TRANSACTIONS = 100000;
-int resize = 0;
+int num_resize = 0;
 
 // shared variable that will be incremented by transactions
 int x = 0;
@@ -117,7 +117,7 @@ bool HNode<T>::contains(T &key) {
 
 template<typename T>
 void HNode<T>::resize(bool grow){
-    resize += 1;
+    num_resize += 1;
     //calculate new size: grow or shrink
     TM_THREAD_INIT();
     TM_BEGIN(atomic)
@@ -228,7 +228,7 @@ int main(void){
     std::cout << "Total Elapsed Seconds: ";
     std::cout << elapsed_secs << std;:endl;
     std::cout << "Total Resize Operations: ";
-    std::cout << resize << std::endl;
+    std::cout << num_resize << std::endl;
 
     return 0;
 }
