@@ -9,6 +9,7 @@
  */
 
 #include <iostream>
+#include <ctime>
 #include "hnode.h"
 #include <atomic>
 #include <cstdlib>
@@ -23,6 +24,7 @@
 
 const int THREAD_COUNT = 4;
 const int NUM_TRANSACTIONS = 100000;
+int resize = 0;
 
 // shared variable that will be incremented by transactions
 int x = 0;
@@ -115,6 +117,7 @@ bool HNode<T>::contains(T &key) {
 
 template<typename T>
 void HNode<T>::resize(bool grow){
+    resize += 1;
     //calculate new size: grow or shrink
     TM_THREAD_INIT();
     TM_BEGIN(atomic)
@@ -206,6 +209,8 @@ int main(void){
     TM_THREAD_INIT();
     int i = 1;
     HNode<int> *hnode = new HNode<int>(2);
+    clock_t begin = clock();
+
     for(int i = 0; i< 1000; i++) {
         hnode->insert(i);
     }
@@ -215,10 +220,15 @@ int main(void){
     for(int i = 0; i< 1000; i++) {
         hnode->remove(i);
     }
+    clock_t end = clock();
+    double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
  
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
-    std::cout << "Testing" << std::endl;
+    std::cout << "Total Elapsed Seconds: ";
+    std::cout << elapsed_secs << std;:endl;
+    std::cout << "Total Resize Operations: ";
+    std::cout << resize << std::endl;
 
     return 0;
 }
