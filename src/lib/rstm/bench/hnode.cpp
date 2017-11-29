@@ -74,10 +74,18 @@ bool HNode<T>::insert(T &key) {
 
 template<typename T>
 bool HNode<T>::remove(T &key) {
-    bool response = apply(DEL, key);
-    if(false /*based on heuristic*/){
-        resize(false);
+    
+    TM_THREAD_INIT();
+    bool response = false;
+    TM_BEGIN(atomic)
+    {
+        response = apply(DEL, key);
+        if(false /*based on heuristic*/){
+            resize(false);
+        }
     }
+    TM_END;
+    TM_THREAD_SHUTDOWN();   
     return response;
 }
 
@@ -88,34 +96,46 @@ FSet<T> HNode<T>::getBucket(int key) {
 
 template<typename T>
 bool HNode<T>::contains(T &key) {
-    FSet<T> curr_bucket = this->buckets[key % this->size];
-    if(!curr_bucket.getHead()->is_mutable) {
-        HNode *prev_hnode = this->pred;
-        if(prev_hnode != NULL) {
-            curr_bucket = prev_hnode->buckets[key % prev_hnode->size];
+    TM_THREAD_INIT();
+    TM_BEGIN(atomic)
+    {
+        FSet<T> curr_bucket = this->buckets[key % this->size];
+        if(!curr_bucket.getHead()->is_mutable) {
+            HNode *prev_hnode = this->pred;
+            if(prev_hnode != NULL) {
+                curr_bucket = prev_hnode->buckets[key % prev_hnode->size];
+            }
         }
     }
+    TM_END;
+    TM_THREAD_SHUTDOWN(); 
     return curr_bucket.hasMember(key);
 }
 
 template<typename T>
 void HNode<T>::resize(bool grow){
     //calculate new size: grow or shrink
-    int new_size = grow ? this->size*2 : this->size/2;
-   
-    //creating new buckets of at least the size of the old bucket
-    //std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
-    
-    //if(new_buckets->size >= size && grow){
-        for(int i=0; i<new_size; i++){
-            //migrate each bucket from old to the new
-            initBucket(i);
-        }
-        this->pred = NULL;
+    TM_THREAD_INIT();
+    TM_BEGIN(atomic)
+    {
+        int new_size = grow ? this->size*2 : this->size/2;
+       
+        //creating new buckets of at least the size of the old bucket
+        //std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
         
-        //setting the old bucket to null
-        //new_buckets.compare_exhange_weak(this->buckets, new_buckets);
-    //}
+        //if(new_buckets->size >= size && grow){
+            for(int i=0; i<new_size; i++){
+                //migrate each bucket from old to the new
+                initBucket(i);
+            }
+            this->pred = NULL;
+            
+            //setting the old bucket to null
+            //new_buckets.compare_exhange_weak(this->buckets, new_buckets);
+        //}
+    }
+    TM_END;
+    TM_THREAD_SHUTDOWN(); 
 }
 
 template<typename T>
@@ -169,13 +189,12 @@ FSet<T> HNode<T>::initBucket(int i) {
 int main(void){
     TM_SYS_INIT();
 
-    // original thread must be initalized also
     TM_THREAD_INIT();
     int i = 1;
     HNode<int> *hnode = new HNode<int>(5);
     hnode->insert(i);
 
-    std::cout << hnode->contains(i) std::endl;
+    std::cout << hnode->contains(i) << std::endl;
 
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
