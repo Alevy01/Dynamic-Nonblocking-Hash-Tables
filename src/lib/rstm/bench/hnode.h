@@ -20,6 +20,7 @@ class HNode {
     public:
 	HNode *pred;
         int size;
+        int used;
         HNode(int size);
         bool insert(T &key);
         bool remove(T &key);

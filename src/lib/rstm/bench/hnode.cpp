@@ -53,6 +53,7 @@ HNode<T>::HNode(int size) {
     this->buckets = new FSet<T>[size];
     this->size = size;
     this->pred = NULL;
+    this->used = 0;
 }
 
 template<typename T>
@@ -63,7 +64,7 @@ bool HNode<T>::insert(T &key) {
     TM_BEGIN(atomic) 
     {
         response = apply(INS, key);
-        if(false/*based on heuristic*/){
+        if(this->used >= (this->size/2)){
             resize(true);
         }
     }
@@ -80,7 +81,7 @@ bool HNode<T>::remove(T &key) {
     TM_BEGIN(atomic)
     {
         response = apply(DEL, key);
-        if(false /*based on heuristic*/){
+        if(this->used < (this->size/2)){
             resize(false);
         }
     }
@@ -152,6 +153,15 @@ bool HNode<T>::apply(OPType type, T &key) {
         
         if(bucket.getHead()->getSize() == 0) {
             bucket = initBucket(hash);
+            if(type == INS) {
+                used +=1;
+            }
+        }
+
+        if(bucket.getHead()->getSize() == 1) {
+            if(type == DEL) {
+                used -=1;
+            }
         }
         
         if(bucket.invoke(fSetOp)) {
@@ -195,11 +205,10 @@ int main(void){
 
     TM_THREAD_INIT();
     int i = 1;
-    HNode<int> *hnode = new HNode<int>(5);
-    FSet<int> c = hnode->getBucket(i);
-    int b = c.getHead()->getSize();
+    HNode<int> *hnode = new HNode<int>(2);
+    
     std::cout << hnode->size << std::endl;
-    hnode->resize(true);
+    hnode->insert(1);
     std::cout << hnode->size << std::endl;
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
