@@ -211,13 +211,15 @@ int main(void){
     HNode<int> *hnode = new HNode<int>(2);
     clock_t begin = clock();
 
-    for(int i = 0; i< 1000; i++) {
+    for(int i = 0; i< 250; i++) {
         hnode->insert(i);
     }
-    for(int i = 0; i< 1000; i++) {
-        hnode->contains(i);
+    for(int i = 0; i< 250; i++) {
+    	if(!hnode->contains(i)){
+		std::cout << i << std::endl;
+	}
     }
-    for(int i = 0; i< 1000; i++) {
+    for(int i = 0; i< 250; i++) {
         hnode->remove(i);
     }
     clock_t end = clock();
@@ -226,7 +228,7 @@ int main(void){
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
     std::cout << "Total Elapsed Seconds: ";
-    std::cout << elapsed_secs << std;:endl;
+    std::cout << elapsed_secs << std::endl;
     std::cout << "Total Resize Operations: ";
     std::cout << num_resize << std::endl;
 
