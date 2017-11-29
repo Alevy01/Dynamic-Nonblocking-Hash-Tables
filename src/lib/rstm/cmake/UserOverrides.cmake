@@ -16,7 +16,7 @@
 ## options:
 
 # Declare all of the initial flags that we care about
-set(rstm_init_cxx_flags -Wall)
+set(rstm_init_cxx_flags -Wall -g)
 set(rstm_init_cxx_flags_Sun -mt -DHT_DEBUG +w -features=zla -template=no%extdef)
 set(rstm_init_cxx_flags_Sun_x86 -xarch=sse2)
 set(rstm_init_cxx_flags_Sun_sparc -xarch=native -xcode=pic32 -Qoption cg -Qiselect-movxtod=0,-Qiselect-movitof=0,-Qiselect-unfused_muladd=0,-Qiselect-sqrt1x=0,-Qiselect-fused_muladd=0)

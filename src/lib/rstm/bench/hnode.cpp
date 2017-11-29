@@ -112,20 +112,12 @@ bool HNode<T>::contains(T &key) {
     }
     TM_END;
     TM_THREAD_SHUTDOWN(); 
-    FSetNode<T> * h = curr_bucket.getHead();
-    std::cout << "\n\n\n";
-    std::cout << key << std::endl;
-    for(const auto& e: h->m_set) {
-        std::cout << e << " ";
-    }
-    std::cout << "\n\n\n";
     return curr_bucket.hasMember(key);
 }
 
 template<typename T>
 void HNode<T>::resize(bool grow){
     num_resize += 1;
-    std::cout << "RESIZE" << std::endl;
     //calculate new size: grow or shrink
     TM_THREAD_INIT();
     TM_BEGIN(atomic)
@@ -160,7 +152,6 @@ bool HNode<T>::apply(OPType type, T &key) {
     FSetOp<T> fSetOp(type, key);
     while(1) {
         int hash = key % this->size;
-        std::cout << "Bucket: " << hash << std::endl;
         FSet<T> bucket = this->getBucket(hash);
         
         if(bucket.getHead()->getSize() == 0) {
@@ -215,17 +206,17 @@ int main(void){
     TM_SYS_INIT();
 
     TM_THREAD_INIT();
-    int i = 3;
-    HNode<int> *hnode = new HNode<int>(10);
+    int bench = 600000;
+    HNode<int> *hnode = new HNode<int>(2);
     clock_t begin = clock();
-    for(int i = 0; i< 10; i++) {
+    for(int i = 0; i< bench*.1; i++) {
         hnode->insert(i);
     }
-    for(int i = 0; i< 10; i++) {
+    for(int i = 0; i< bench*.8; i++) {
         hnode->contains(i);
     }
-    for(int i = 0; i< 10; i++) {
-       hnode->remove(i);
+    for(int i = 0; i<bench*.1; i++) {
+	hnode->remove(i);
     }
     clock_t end = clock();
     double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
