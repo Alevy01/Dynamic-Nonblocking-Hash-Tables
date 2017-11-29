@@ -208,7 +208,9 @@ int main(void){
     HNode<int> *hnode = new HNode<int>(2);
     
     std::cout << hnode->size << std::endl;
-    hnode->insert(1);
+    hnode->insert(i);
+    std::cout << hnode->size << std::endl;
+    hnode->remove(i);
     std::cout << hnode->size << std::endl;
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();

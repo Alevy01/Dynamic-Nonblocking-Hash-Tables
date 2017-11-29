@@ -52,8 +52,8 @@ class FSet{
                 }else if(opt == DEL){
                   status = head->remove(fop.getKey());
                   
-                  if(!status)
-                   std::cerr<<"Key was not found\n";
+                  // if(!status)
+                  //  std::cerr<<"Key was not found\n";
 
                 }else{
                     std::invalid_argument("Unsupported OPType");
