@@ -119,17 +119,22 @@ void HNode<T>::resize(bool grow){
     TM_BEGIN(atomic)
     {
         int new_size = grow ? this->size*2 : this->size/2;
-       
+	if(grow) {
+		FSet<T>* newArr = new FSet<T>[new_size];
+   		memcpy( newArr, this->buckets, size * sizeof(int) );
+		delete [] this->buckets;
+		this->buckets = newArr;
+	}
         //creating new buckets of at least the size of the old bucket
         //std::atomic<FSet<T> *>new_buckets = new FSet<T>[new_size];
         
         //if(new_buckets->size >= size && grow){
             for(int i=0; i<new_size; i++){
                 //migrate each bucket from old to the new
-                initBucket(i);
+                this->initBucket(i);
             }
             this->pred = NULL;
-            
+            this->size = new_size;
             //setting the old bucket to null
             //new_buckets.compare_exhange_weak(this->buckets, new_buckets);
         //}
@@ -163,9 +168,8 @@ FSet<T> HNode<T>::initBucket(int i) {
     FSet<T> new_bucket;
     std::unordered_set<T> new_set;
     int curr_size = this->size;
-
-    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode != NULL) { 
-        int prev_size = prev_hnode->size; 
+    if(curr_bucket.getHead()->getSize() == 0 && prev_hnode) { 
+	int prev_size = prev_hnode->size; 
         if(curr_size == (prev_size*2)) { 
             new_bucket = prev_hnode->buckets[i % prev_size];
             new_set = new_bucket.freeze(); 
@@ -176,13 +180,13 @@ FSet<T> HNode<T>::initBucket(int i) {
             std::unordered_set<T> tmp_set = larger_bucket.freeze();
             new_set.insert(tmp_set.begin(), tmp_set.end());
         }
-
         FSet<T> return_set(new_set);
         std::atomic<FSet<T>> b {{this->buckets[i]}};
 
         if(b.load().getHead()->getSet().size() == 0)
                b.store(return_set);
     }
+   // std::cout << "0000" << std::endl;
     return curr_bucket;
 }
 
@@ -192,10 +196,11 @@ int main(void){
     TM_THREAD_INIT();
     int i = 1;
     HNode<int> *hnode = new HNode<int>(5);
-    
+    FSet<int> c = hnode->getBucket(i);
+    int b = c.getHead()->getSize();
     std::cout << hnode->size << std::endl;
     hnode->resize(true);
-
+    std::cout << hnode->size << std::endl;
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
     std::cout << "Testing" << std::endl;

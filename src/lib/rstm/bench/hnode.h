@@ -17,8 +17,8 @@ template<typename T>
 class HNode {
     private:
         FSet<T> *buckets;
-        HNode *pred;
     public:
+	HNode *pred;
         int size;
         HNode(int size);
         bool insert(T &key);
