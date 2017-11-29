@@ -192,9 +192,9 @@ int main(void){
     TM_THREAD_INIT();
     int i = 1;
     HNode<int> *hnode = new HNode<int>(5);
-    hnode->insert(i);
-
-    std::cout << hnode->contains(i) << std::endl;
+    
+    std::cout << hnode->size << std::endl;
+    hnode->resize(true);
 
     // And call sys shutdown stuff
     TM_SYS_SHUTDOWN();
