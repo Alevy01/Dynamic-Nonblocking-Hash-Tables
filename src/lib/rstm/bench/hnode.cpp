@@ -206,16 +206,16 @@ int main(void){
     TM_SYS_INIT();
 
     TM_THREAD_INIT();
-    int bench = 600000;
+    int bench = 60000;
     HNode<int> *hnode = new HNode<int>(2);
     clock_t begin = clock();
-    for(int i = 0; i< bench*.1; i++) {
+    for(int i = 0; i< bench*.33; i++) {
         hnode->insert(i);
     }
-    for(int i = 0; i< bench*.8; i++) {
+    for(int i = 0; i< bench*.33; i++) {
         hnode->contains(i);
     }
-    for(int i = 0; i<bench*.1; i++) {
+    for(int i = 0; i<bench*.33; i++) {
 	hnode->remove(i);
     }
     clock_t end = clock();
