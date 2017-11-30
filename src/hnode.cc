@@ -13,12 +13,14 @@
 #include <atomic>
 #include <cstring>
 
+
 template<typename T>
 HNode<T>::HNode(int size) {
     this->buckets = new FSet<T>[size];
     this->size = size;
     this->pred = NULL;
     this->used = 0;
+    this->num_resize = 0;
 }
 
 template<typename T>
@@ -61,7 +63,7 @@ bool HNode<T>::contains(T &key) {
 template<typename T>
 void HNode<T>::resize(bool grow){
     //calculate new size: grow or shrink
-    std::cout<<"RESISZE\n";
+    this->num_resize+=1;
     int new_size = grow ? this->size*2 : this->size/2;
 
     //creating new buckets of at least the size of the old bucket
