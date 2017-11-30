@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2  -O3 -g     -m64 CMakeFiles/DisjointBenchSSB64.dir/DisjointBench.cpp.o  -o DisjointBenchSSB64 -rdynamic ../libstm/libstm64.a -lpthread -lrt 

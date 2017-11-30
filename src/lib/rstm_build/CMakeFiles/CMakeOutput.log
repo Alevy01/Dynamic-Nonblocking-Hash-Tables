@@ -1,0 +1,855 @@
+The system is: Linux - 3.13.0-125-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec120782174/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec120782174.dir/build.make CMakeFiles/cmTryCompileExec120782174.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec120782174.dir/testCCompiler.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec120782174.dir/testCCompiler.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec120782174
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec120782174.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec120782174.dir/testCCompiler.c.o  -o cmTryCompileExec120782174 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3529040884/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3529040884.dir/build.make CMakeFiles/cmTryCompileExec3529040884.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3529040884
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3529040884.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG  -v CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3529040884 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 6.3.0-18ubuntu2~14.04' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=gcc4-compatible --disable-libstdcxx-dual-abi --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 6.3.0 20170519 (Ubuntu/Linaro 6.3.0-18ubuntu2~14.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTryCompileExec3529040884' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEhUOsy.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3529040884 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTryCompileExec3529040884' '-rdynamic' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3529040884/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3529040884.dir/build.make CMakeFiles/cmTryCompileExec3529040884.dir/build]
+  ignore line: [make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3529040884]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3529040884.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc    -O2 -g -DNDEBUG  -v CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3529040884 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 6.3.0-18ubuntu2~14.04' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=gcc4-compatible --disable-libstdcxx-dual-abi --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.3.0 20170519 (Ubuntu/Linaro 6.3.0-18ubuntu2~14.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTryCompileExec3529040884' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEhUOsy.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3529040884 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccEhUOsy.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3529040884] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
+    arg [CMakeFiles/cmTryCompileExec3529040884.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6] ==> [/usr/lib/gcc/x86_64-linux-gnu/6]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/6;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec188755888/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec188755888.dir/build.make CMakeFiles/cmTryCompileExec188755888.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec188755888.dir/testCXXCompiler.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g   -o CMakeFiles/cmTryCompileExec188755888.dir/testCXXCompiler.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec188755888
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec188755888.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g    CMakeFiles/cmTryCompileExec188755888.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec188755888 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec336663785/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec336663785.dir/build.make CMakeFiles/cmTryCompileExec336663785.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g   -o CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec336663785
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec336663785.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g  -v CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec336663785 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 6.3.0-18ubuntu2~14.04' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=gcc4-compatible --disable-libstdcxx-dual-abi --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 6.3.0 20170519 (Ubuntu/Linaro 6.3.0-18ubuntu2~14.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-Wall' '-msse2' '-mfpmath=sse' '-march=core2' '-mtune=core2' '-O3' '-g' '-v' '-o' 'cmTryCompileExec336663785' '-rdynamic' '-shared-libgcc'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEZ22j2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec336663785 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-Wall' '-msse2' '-mfpmath=sse' '-march=core2' '-mtune=core2' '-O3' '-g' '-v' '-o' 'cmTryCompileExec336663785' '-rdynamic' '-shared-libgcc'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec336663785/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec336663785.dir/build.make CMakeFiles/cmTryCompileExec336663785.dir/build]
+  ignore line: [make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g   -o CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec336663785]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec336663785.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2   -O3 -g  -v CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec336663785 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 6.3.0-18ubuntu2~14.04' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=gcc4-compatible --disable-libstdcxx-dual-abi --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.3.0 20170519 (Ubuntu/Linaro 6.3.0-18ubuntu2~14.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-Wall' '-msse2' '-mfpmath=sse' '-march=core2' '-mtune=core2' '-O3' '-g' '-v' '-o' 'cmTryCompileExec336663785' '-rdynamic' '-shared-libgcc']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEZ22j2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec336663785 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccEZ22j2.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec336663785] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
+    arg [CMakeFiles/cmTryCompileExec336663785.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6] ==> [/usr/lib/gcc/x86_64-linux-gnu/6]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/6;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2478305215/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2478305215.dir/build.make CMakeFiles/cmTryCompileExec2478305215.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2478305215.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2478305215.dir/CheckIncludeFiles.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2478305215
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2478305215.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2478305215.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2478305215 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec656332203/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec656332203.dir/build.make CMakeFiles/cmTryCompileExec656332203.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec656332203.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec656332203.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec656332203
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec656332203.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec656332203.dir/CheckFunctionExists.c.o  -o cmTryCompileExec656332203 -rdynamic -lpthread 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2225251279/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2225251279.dir/build.make CMakeFiles/cmTryCompileExec2225251279.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2225251279.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2225251279.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2225251279
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2225251279.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2225251279.dir/src.c.o  -o cmTryCompileExec2225251279 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1785989298/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1785989298.dir/build.make CMakeFiles/cmTryCompileExec1785989298.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1785989298.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec1785989298.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec1785989298
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1785989298.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec1785989298.dir/src.cxx.o  -o cmTryCompileExec1785989298 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2878901181/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2878901181.dir/build.make CMakeFiles/cmTryCompileExec2878901181.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2878901181.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2878901181.dir/CheckIncludeFile.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2878901181
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2878901181.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2878901181.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2878901181 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec626996032/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec626996032.dir/build.make CMakeFiles/cmTryCompileExec626996032.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec626996032.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec626996032.dir/CheckIncludeFile.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec626996032
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec626996032.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec626996032.dir/CheckIncludeFile.c.o  -o cmTryCompileExec626996032 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1734277362/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1734277362.dir/build.make CMakeFiles/cmTryCompileExec1734277362.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1734277362.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec1734277362.dir/CheckIncludeFile.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1734277362
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1734277362.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec1734277362.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1734277362 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2224415114/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2224415114.dir/build.make CMakeFiles/cmTryCompileExec2224415114.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2224415114.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2224415114.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTryCompileExec2224415114
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2224415114.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2224415114.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTryCompileExec2224415114 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec79860728/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec79860728.dir/build.make CMakeFiles/cmTryCompileExec79860728.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec79860728.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec79860728.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec79860728
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec79860728.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec79860728.dir/src.c.o  -o cmTryCompileExec79860728 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4222436927/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4222436927.dir/build.make CMakeFiles/cmTryCompileExec4222436927.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4222436927.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec4222436927.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec4222436927
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4222436927.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec4222436927.dir/src.cxx.o  -o cmTryCompileExec4222436927 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3848109341/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3848109341.dir/build.make CMakeFiles/cmTryCompileExec3848109341.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3848109341.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3848109341.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec3848109341
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3848109341.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec3848109341.dir/src.c.o  -o cmTryCompileExec3848109341 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec59067914/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec59067914.dir/build.make CMakeFiles/cmTryCompileExec59067914.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec59067914.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec59067914.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec59067914
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec59067914.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec59067914.dir/src.cxx.o  -o cmTryCompileExec59067914 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3049190236/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3049190236.dir/build.make CMakeFiles/cmTryCompileExec3049190236.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3049190236.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3049190236.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec3049190236
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3049190236.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec3049190236.dir/src.c.o  -o cmTryCompileExec3049190236 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2812116210/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2812116210.dir/build.make CMakeFiles/cmTryCompileExec2812116210.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2812116210.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec2812116210.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec2812116210
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2812116210.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec2812116210.dir/src.cxx.o  -o cmTryCompileExec2812116210 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec109102855/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec109102855.dir/build.make CMakeFiles/cmTryCompileExec109102855.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec109102855.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec109102855.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec109102855
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec109102855.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec109102855.dir/src.c.o  -o cmTryCompileExec109102855 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3159287674/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3159287674.dir/build.make CMakeFiles/cmTryCompileExec3159287674.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3159287674.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec3159287674.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec3159287674
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3159287674.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec3159287674.dir/src.cxx.o  -o cmTryCompileExec3159287674 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2364999195/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2364999195.dir/build.make CMakeFiles/cmTryCompileExec2364999195.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2364999195.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2364999195.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2364999195
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2364999195.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2364999195.dir/src.c.o  -o cmTryCompileExec2364999195 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1684819103/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1684819103.dir/build.make CMakeFiles/cmTryCompileExec1684819103.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1684819103.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec1684819103.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec1684819103
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1684819103.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec1684819103.dir/src.cxx.o  -o cmTryCompileExec1684819103 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2874997063/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2874997063.dir/build.make CMakeFiles/cmTryCompileExec2874997063.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2874997063.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2874997063.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2874997063
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2874997063.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2874997063.dir/src.c.o  -o cmTryCompileExec2874997063 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1992710498/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1992710498.dir/build.make CMakeFiles/cmTryCompileExec1992710498.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1992710498.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec1992710498.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec1992710498
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1992710498.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec1992710498.dir/src.cxx.o  -o cmTryCompileExec1992710498 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3272727375/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3272727375.dir/build.make CMakeFiles/cmTryCompileExec3272727375.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3272727375.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3272727375.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec3272727375
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3272727375.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec3272727375.dir/src.c.o  -o cmTryCompileExec3272727375 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec453145522/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec453145522.dir/build.make CMakeFiles/cmTryCompileExec453145522.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec453145522.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec453145522.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec453145522
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec453145522.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec453145522.dir/src.cxx.o  -o cmTryCompileExec453145522 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1527681842/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1527681842.dir/build.make CMakeFiles/cmTryCompileExec1527681842.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1527681842.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec1527681842.dir/src.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec1527681842
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1527681842.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec1527681842.dir/src.c.o  -o cmTryCompileExec1527681842 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2147865398/fast"
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2147865398.dir/build.make CMakeFiles/cmTryCompileExec2147865398.dir/build
+make[2]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2147865398.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g   -o CMakeFiles/cmTryCompileExec2147865398.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec2147865398
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2147865398.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DOpenMP_FLAG_DETECTED -fopenmp  -O3 -g    CMakeFiles/cmTryCompileExec2147865398.dir/src.cxx.o  -o cmTryCompileExec2147865398 -rdynamic 
+make[2]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+

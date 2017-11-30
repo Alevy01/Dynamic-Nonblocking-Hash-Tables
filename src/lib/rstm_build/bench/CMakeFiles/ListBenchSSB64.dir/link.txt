@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2  -O3 -g     -m64 CMakeFiles/ListBenchSSB64.dir/ListBench.cpp.o  -o ListBenchSSB64 -rdynamic ../libstm/libstm64.a -lpthread -lrt 

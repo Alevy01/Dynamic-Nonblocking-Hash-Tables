@@ -1,0 +1,123 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1667807795/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1667807795.dir/build.make CMakeFiles/cmTryCompileExec1667807795.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1667807795.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec1667807795.dir/CheckSymbolExists.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1667807795
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1667807795.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec1667807795.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1667807795 -rdynamic 
+CMakeFiles/cmTryCompileExec1667807795.dir/CheckSymbolExists.c.o: In function `main':
+/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1667807795] Error 1
+make: *** [cmTryCompileExec1667807795/fast] Error 2
+
+File /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3038482160/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3038482160.dir/build.make CMakeFiles/cmTryCompileExec3038482160.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3038482160.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec3038482160.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3038482160
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3038482160.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec3038482160.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3038482160 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3038482160] Error 1
+make: *** [cmTryCompileExec3038482160/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test CXX_HAS_-m32 failed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1250866986/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1250866986.dir/build.make CMakeFiles/cmTryCompileExec1250866986.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1250866986.dir/src.cxx.o
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DCXX_HAS_-m32  -O3 -g   -m32 -o CMakeFiles/cmTryCompileExec1250866986.dir/src.cxx.o -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/src.cxx
+<command-line>:0:9: warning: ISO C++11 requires whitespace after the macro name
+Linking CXX executable cmTryCompileExec1250866986
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1250866986.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -msse2 -mfpmath=sse -march=core2 -mtune=core2 -DCXX_HAS_-m32  -O3 -g    CMakeFiles/cmTryCompileExec1250866986.dir/src.cxx.o  -o cmTryCompileExec1250866986 -rdynamic -m32 
+/usr/bin/ld: cannot find crt1.o: No such file or directory
+/usr/bin/ld: cannot find crti.o: No such file or directory
+/usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/6/libstdc++.so when searching for -lstdc++
+/usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/6/libstdc++.a when searching for -lstdc++
+/usr/bin/ld: cannot find -lstdc++
+/usr/bin/ld: cannot find -lm
+/usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/6/libgcc_s.so.1 when searching for libgcc_s.so.1
+/usr/bin/ld: cannot find libgcc_s.so.1
+/usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a when searching for -lgcc
+/usr/bin/ld: cannot make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+find -lgcc
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1250866986] Error 1
+make: *** [cmTryCompileExec1250866986/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2593880133/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2593880133.dir/build.make CMakeFiles/cmTryCompileExec2593880133.dir/build
+make[1]: Entering directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2593880133.dir/TestEndianess.c.o
+/usr/bin/cc   -O2 -g -DNDEBUG   -o CMakeFiles/cmTryCompileExec2593880133.dir/TestEndianess.c.o   -c /home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec2593880133
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2593880133.dir/link.txt --verbose=1
+/usr/bin/cc    -O2 -g -DNDEBUG    CMakeFiles/cmTryCompileExec2593880133.dir/TestEndianess.c.o  -o cmTryCompileExec2593880133 -rdynamic 
+make[1]: Leaving directory `/home/ubuntu/Dynamic-Nonblocking-Hash-Tables/src/lib/rstm_build/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
