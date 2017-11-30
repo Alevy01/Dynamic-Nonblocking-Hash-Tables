@@ -132,7 +132,6 @@ FSet<T> HNode<T>::initBucket(int i) {
 
         FSet<T> return_set(new_set);
         std::atomic<FSet<T>> b {{this->buckets[i]}};
-
         if(b.load().getHead()->getSet().size() == 0)
                b.store(return_set);
     }

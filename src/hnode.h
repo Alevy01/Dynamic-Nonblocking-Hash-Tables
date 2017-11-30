@@ -66,7 +66,7 @@ void bench(){
 }
 
 int main(void){
-    cc::ThreadPool pool(5);
+    cc::ThreadPool pool();
     //cc::Job j;
 
     HNode<int> *hnode = new HNode<int>(5);
