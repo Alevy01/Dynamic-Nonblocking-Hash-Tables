@@ -21,6 +21,7 @@ class HNode {
         HNode *pred;
         int used;
     public:
+        int num_resize;
         HNode(int size);
         bool insert(T &key);
         bool remove(T &key);
@@ -43,19 +44,19 @@ class Job {
       this->count = rm = ct = count;
     }
     void insert(){
-      std::cout<<"Thread ID INSERT OP: "<<std::this_thread::get_id()<<std::endl;
+//      std::cout<<"Thread ID INSERT OP: "<<std::this_thread::get_id()<<std::endl;
       hnode->insert(count);
       count++;
     }
 
     void contains(){
-      std::cout<<"Thread ID CONTAINS OP: "<<std::this_thread::get_id()<<std::endl;
+//      std::cout<<"Thread ID CONTAINS OP: "<<std::this_thread::get_id()<<std::endl;
       hnode->contains(ct);
       ct++;
     }
 
     void remove(){
-      std::cout<<"Thread ID REMOVE OP: "<<std::this_thread::get_id()<<std::endl;
+//      std::cout<<"Thread ID REMOVE OP: "<<std::this_thread::get_id()<<std::endl;
       hnode->remove(rm);
       rm++;
     }
@@ -66,21 +67,28 @@ void bench(){
 }
 
 int main(void){
-    cc::ThreadPool pool(5);
+    cc::ThreadPool pool(8);
     //cc::Job j;
-
-    HNode<int> *hnode = new HNode<int>(5);
+    int bench = 30000;
+    HNode<int> *hnode = new HNode<int>(2);
+    clock_t begin = clock();
     Job<int> j(hnode);
-    for(int i=0; i<5; i++)
+    for(int i=0; i<bench*.1; i++)
         pool.enqueue([&j](){j.insert();});
 
-    for(int i=0; i<5; i++)
+    for(int i=0; i<bench*.8; i++)
         pool.enqueue([&j](){ j.contains();});
 
-    for(int i=0; i<5; i++)
+    for(int i=0; i<bench*.1; i++)
         pool.enqueue([&j](){ j.remove();});
 
     pool.joinAll();
+    clock_t end = clock();
+    double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+    std::cout << "Total Elapsed Seconds: ";
+    std::cout << elapsed_secs << std::endl;
+    std::cout << "Total Resize Operations: ";
+    std::cout << hnode->num_resize << std::endl;
 
     return 0;
 }
