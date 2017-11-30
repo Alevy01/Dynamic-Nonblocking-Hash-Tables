@@ -41,7 +41,7 @@ class ThreadPool {
         void assignJob();
         std::function<void(void)> processJob();
     public:
-        ThreadPool(int size=5);
+        ThreadPool(int size=1);
         void enqueue(std::function<void(void)> job);
         int  jobCount();
         void joinAll();
